@@ -1,6 +1,6 @@
 node_modules
 # Local Netlify folder
 .netlify
-.next
+.next/
 node_modules
-next
+next/
