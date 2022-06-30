@@ -24,7 +24,17 @@ export default function Index() {
     if (eventID === 12) {
       setEventIcon(icons.volcano)
     }
-
+    // } else if (page === 'Volcanos') {
+    //   changeEvent(12)
+    // } else if (page === 'Red Tide') {
+    //   changeEvent(13)
+    // } else if (page === 'Earthquakes') {
+    //   changeEvent(16)
+    // } else if (page === 'Snow') {
+    //   changeEvent(17)
+    // } else if (page === 'Drought') {
+    //   changeEvent(6)
+    // }
     setEventID(eventID)
   }
 
@@ -45,7 +55,7 @@ export default function Index() {
       <ResponsiveAppBar changeEvent={changeEvent} />
       <main className={styles.main}>
         <Head>
-          <title>Wildfire Tracker</title>
+          <title>Disaster Tracker | Jack Stevens</title>
         </Head>
         {loading === true ? (
           <Loading />
