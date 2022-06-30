@@ -1,0 +1,32 @@
+{
+  "name": "next-and-material-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@google/markerclusterer": "^2.0.9",
+    "@iconify/icons-mdi": "^1.2.22",
+    "@iconify/react": "^3.2.2",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.8.6",
+    "@react-google-maps/api": "^2.12.0",
+    "google-map-react": "^2.1.10",
+    "next": "12.2.0",
+    "react": "18.2.0",
+    "react-animations": "^1.0.0",
+    "react-dom": "18.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "eslint": "8.18.0",
+    "eslint-config-next": "12.2.0",
+    "gh-pages": "^4.0.0"
+  }
+}

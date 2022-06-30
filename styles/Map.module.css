@@ -1,0 +1,5 @@
+.map {
+  margin-top: 68px;
+  width: 100vw;
+  height: calc(100vh - 68px);
+}
