@@ -58,7 +58,7 @@ export default function Index() {
       <ResponsiveAppBar changeEvent={changeEvent} />
       <main className={styles.main}>
         <Head>
-          <title>Disaster Tracker</title>
+          <title>Disaster - Tracker</title>
         </Head>
         {loading === true ? (
           <Loading loadingName={loadingName} />
