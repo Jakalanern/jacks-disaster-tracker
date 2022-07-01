@@ -17,6 +17,11 @@ export default function Index() {
   const [eventID, setEventID] = useState(8)
   const [eventIcon, setEventIcon] = useState(icons.fire)
   const [loadingName, setLoadingName] = useState('LOADING WILDFIRES')
+  const [iconClicked, setIconClicked] = useState(false)
+
+  const handleHint = () => {
+    setIconClicked(true)
+  }
 
   const changeEvent = (eventID) => {
     if (eventID === 8) {
@@ -63,7 +68,13 @@ export default function Index() {
         {loading === true ? (
           <Loading loadingName={loadingName} />
         ) : (
-          <Map fires={fires} loading={loading} eventIcon={eventIcon} />
+          <Map
+            fires={fires}
+            loading={loading}
+            eventIcon={eventIcon}
+            handleHint={handleHint}
+            iconClicked={iconClicked}
+          />
         )}
       </main>
     </div>

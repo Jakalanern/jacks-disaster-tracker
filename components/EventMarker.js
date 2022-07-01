@@ -9,6 +9,7 @@ const EventMarker = ({
   clearLocationInfo,
   showInfoHandler,
   eventIcon,
+  handleHint,
 }) => {
   const icons = {
     fire: 'https://i.ibb.co/CwrWF2P/new-flame-xxxs.png',
@@ -17,6 +18,7 @@ const EventMarker = ({
   return (
     <Marker
       onClick={() => {
+        handleHint()
         showInfoHandler()
         clearLocationInfo()
         setTimeout(() => {

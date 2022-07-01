@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import mapStyles from '../styles/Map.module.css'
 import FireInfo from './FireInfo'
 import EventMarker from './EventMarker'
+import Hint from './Hint'
 const defaultProps = {
   center: {
     lat: 40.28223044977514,
@@ -11,7 +12,15 @@ const defaultProps = {
   zoom: 4,
 }
 
-const Map = ({ center, zoom, fires, loading, eventIcon }) => {
+const Map = ({
+  center,
+  zoom,
+  fires,
+  loading,
+  eventIcon,
+  handleHint,
+  iconClicked,
+}) => {
   const [locationInfo, setLocationInfo] = useState(null)
   const [showInfo, setShowInfo] = useState(false)
   const { isLoaded } = useLoadScript({
@@ -51,11 +60,13 @@ const Map = ({ center, zoom, fires, loading, eventIcon }) => {
                 fireLat={fireLat}
                 fireLang={fireLang}
                 eventIcon={eventIcon}
+                handleHint={handleHint}
               />
             </div>
           )
         })}
       {showInfo && <FireInfo locationInfo={locationInfo} />}
+      {iconClicked === false && <Hint />}
     </GoogleMap>
   )
 }

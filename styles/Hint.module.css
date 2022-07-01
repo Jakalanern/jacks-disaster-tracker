@@ -1,0 +1,49 @@
+.hint {
+  position: fixed;
+  right: -0.5em;
+  top: 20em;
+  width: clamp(100px, 50vw, 200px);
+  height: 150px;
+  background: #1976d294;
+  border: 2px solid rgba(255, 255, 255, 0.774);
+  border-right: 0;
+  border-radius: 0.5em;
+  z-index: 99;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-right: 0.5em;
+  font-size: 0.5em;
+  padding-left: 1em;
+  animation: slideIn 1s;
+}
+
+.slidein {
+  animation: slideIn 1s;
+}
+
+.slideout {
+  animation: slideOut 1s;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
