@@ -8,10 +8,3 @@
   text-align: center;
   background: rgb(255, 255, 255);
 }
-
-.loadingMessage {
-  color: white;
-  font-size: 4em;
-  z-index: 99;
-  text-align: center;
-}

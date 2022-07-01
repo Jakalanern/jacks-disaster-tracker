@@ -16,12 +16,15 @@ export default function Index() {
   const [loading, setLoading] = useState()
   const [eventID, setEventID] = useState(8)
   const [eventIcon, setEventIcon] = useState(icons.fire)
+  const [loadingName, setLoadingName] = useState('LOADING WILDFIRES')
 
   const changeEvent = (eventID) => {
     if (eventID === 8) {
+      setLoadingName('LOADING WILDFIRES')
       setEventIcon(icons.fire)
     }
     if (eventID === 12) {
+      setLoadingName('LOADING VOLCANOS')
       setEventIcon(icons.volcano)
     }
     // } else if (page === 'Volcanos') {
@@ -58,7 +61,7 @@ export default function Index() {
           <title>Disaster Tracker</title>
         </Head>
         {loading === true ? (
-          <Loading />
+          <Loading loadingName={loadingName} />
         ) : (
           <Map fires={fires} loading={loading} eventIcon={eventIcon} />
         )}

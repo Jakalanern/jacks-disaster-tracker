@@ -1,19 +1,19 @@
 import styles from '../styles/Loading.module.css'
 import { CircularProgress, Typography } from '@mui/material'
 
-const Loading = () => {
+const Loading = ({ loadingName }) => {
   return (
     <div className={styles.loading}>
       <Typography
-        variant='h1'
         color='primary'
         component='h1'
         sx={{
           mb: 4,
-          fontSize: { xs: 48, sm: 62, md: 96 },
+          fontSize: { xs: 48, sm: 62, md: 72 },
           textAlign: 'center',
+          fontWeight: 400,
         }}>
-        LOADING
+        {loadingName}
       </Typography>
       <CircularProgress
         size='3rem'

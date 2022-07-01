@@ -8,7 +8,7 @@ const defaultProps = {
     lat: 40.28223044977514,
     lng: -105.7731614572864,
   },
-  zoom: 5,
+  zoom: 4,
 }
 
 const Map = ({ center, zoom, fires, loading, eventIcon }) => {
