@@ -7,11 +7,10 @@ export const anim = keyframes`${merge(bounceIn, fadeIn)}
 export const EventInfo = styled.div`
   position: fixed;
   bottom: 3em;
-  left: 2em;
-  max-width: 300px;
+  left: 0.55em;
+  max-width: 275px;
   min-height: 125px;
-  background: #1976d294;
-  border: 2px solid rgba(255, 255, 255, 0.774);
+  background: #1976d2db;
   border-radius: 0.5em;
   z-index: 99;
 

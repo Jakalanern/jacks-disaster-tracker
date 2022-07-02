@@ -12,10 +12,12 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment'
 import styles from '../styles/Nav.module.css'
+import Donate from './Donate'
 
 const pages = [
   'Fires',
   'Volcanos',
+  'Wildfire Relief Fund 2022',
   // 'Red Tide',
   // 'Earthquakes',
   // 'Snow',
@@ -40,6 +42,8 @@ const ResponsiveAppBar = ({ changeEvent }) => {
       changeEvent(17)
     } else if (page === 'Drought') {
       changeEvent(6)
+    } else if (page === 'Wildfire Relief Fund 2022') {
+      window.open('https://www.gofundme.com/f/wildfirerelieffund')
     }
   }
 
@@ -84,7 +88,6 @@ const ResponsiveAppBar = ({ changeEvent }) => {
               }}>
               Disaster Tracker
             </Typography>
-
             <LocalFireDepartmentIcon
               sx={{
                 display: { xs: 'flex', md: 'none' },

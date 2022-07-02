@@ -4,6 +4,7 @@ import mapStyles from '../styles/Map.module.css'
 import FireInfo from './FireInfo'
 import EventMarker from './EventMarker'
 import Hint from './Hint'
+import Donate from './Donate'
 const defaultProps = {
   center: {
     lat: 40.28223044977514,
@@ -65,6 +66,9 @@ const Map = ({
             </div>
           )
         })}
+      <Donate
+        href={'https://www.gofundme.com/c/act/wildfire-relief/california'}
+      />
       {showInfo && <FireInfo locationInfo={locationInfo} />}
       {iconClicked === false && <Hint />}
     </GoogleMap>
