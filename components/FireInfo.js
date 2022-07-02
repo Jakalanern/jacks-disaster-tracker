@@ -1,11 +1,20 @@
-import styles from '../styles/FireInfo.module.css'
-import { FireTitle } from './styles/FireTitle.styled'
+import { EventTitle } from './styles/EventTitle.styled'
+import { EventURL } from './styles/EventURL'
+import { EventInfo } from './styles/EventInfo.styled'
 
 const FireInfo = ({ locationInfo }) => {
   return (
-    <div className={styles.fireInfo}>
-      {locationInfo && <FireTitle>{locationInfo.title}</FireTitle>}
-    </div>
+    <EventInfo>
+      {locationInfo && (
+        <>
+          <EventTitle>{locationInfo.title}</EventTitle>
+          {!locationInfo.sources[0].url.includes('emops') && (
+            <EventURL href={locationInfo.sources[0].url}>Source</EventURL>
+          )}
+          {console.log(locationInfo.sources[0].url)}
+        </>
+      )}
+    </EventInfo>
   )
 }
 
