@@ -43,6 +43,10 @@ const Map = ({
     setShowInfo(true)
   }
 
+  const hideInfoHandler = () => {
+    setShowInfo(false)
+  }
+
   const options = {
     maxZoom: 18,
   }
@@ -50,6 +54,9 @@ const Map = ({
   if (!isLoaded) return <div>Loading...</div>
   return (
     <GoogleMap
+      onClick={() => {
+        hideInfoHandler()
+      }}
       options={{
         minZoom: 3.55,
         streetViewControl: false,
@@ -81,7 +88,6 @@ const Map = ({
       <Donate
         href={'https://www.gofundme.com/c/act/wildfire-relief/california'}
       />
-
       {showInfo && <FireInfo locationInfo={locationInfo} />}
       {iconClicked === false && <Hint />}
     </GoogleMap>

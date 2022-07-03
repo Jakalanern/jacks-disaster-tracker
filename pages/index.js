@@ -10,8 +10,8 @@ import EventList from '../components/EventList'
 
 export default function Index() {
   const icons = {
-    fire: 'https://i.ibb.co/CwrWF2P/new-flame-xxxs.png',
-    volcano: 'https://i.ibb.co/NZRT1GY/output-onlinepngtools-6.png',
+    fire: 'https://gcdnb.pbrd.co/images/nCVYT8cGTbRv.png?o=1',
+    volcano: 'https://gcdnb.pbrd.co/images/cbfTLmxIWDx1.png?o=1',
   }
   const [fires, setFires] = useState()
   const [loading, setLoading] = useState()

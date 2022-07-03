@@ -3,3 +3,9 @@
   margin-top: 68px;
   height: calc(100vh - 68px);
 }
+
+@media (max-width: 800px) {
+  .map {
+    height: calc(100vh - 68px);
+  }
+}

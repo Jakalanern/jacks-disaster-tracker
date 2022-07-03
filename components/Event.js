@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyledEvent } from './styles/Event.styled'
+import styles from '../styles/Event.module.css'
 
 const Event = ({ event }) => {
   const eventTitleStyles = {
@@ -25,6 +26,7 @@ const Event = ({ event }) => {
     color: '#1976d2db',
     marginTop: '.25rem',
   }
+
   return (
     <StyledEvent
       onClick={() => {

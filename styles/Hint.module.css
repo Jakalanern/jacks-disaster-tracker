@@ -1,11 +1,9 @@
 .hint {
   position: fixed;
   right: -0.5em;
-  top: 20em;
-  width: clamp(100px, 50vw, 200px);
-  height: 150px;
+  top: 12.65em;
+  max-width: 125px;
   background: #1976d2db;
-  border: 2px solid rgba(255, 255, 255, 0.774);
   border-right: 0;
   border-radius: 0.5em;
   z-index: 99;
@@ -17,9 +15,10 @@
   text-align: center;
   color: white;
   padding-right: 0.5em;
-  font-size: 0.5em;
   padding-left: 1em;
   animation: slideIn 1s;
+  font-size: 0.8rem;
+  cursor: default;
 }
 
 .slidein {

@@ -1,7 +1,5 @@
-import { stepClasses } from '@mui/material'
 import React from 'react'
 import styles from '../styles/EventList.module.css'
-import { StyledEvent } from './styles/Event.styled'
 import Event from './Event'
 
 const EventList = ({ events, eventName }) => {

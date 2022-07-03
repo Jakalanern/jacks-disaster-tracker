@@ -12,7 +12,7 @@ const EventMarker = ({
   handleHint,
 }) => {
   const icons = {
-    fire: 'https://i.ibb.co/CwrWF2P/new-flame-xxxs.png',
+    fire: 'https://i.ibb.co/QP3nD4R/new-new-flame-xxxs.png',
     volcano: 'https://i.ibb.co/NZRT1GY/output-onlinepngtools-6.png',
   }
   return (
