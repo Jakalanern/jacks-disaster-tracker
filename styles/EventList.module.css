@@ -1,0 +1,9 @@
+.eventList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  width: 100vw;
+  padding: 0 2em;
+  margin-bottom: 4em;
+}

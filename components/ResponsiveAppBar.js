@@ -13,11 +13,13 @@ import MenuItem from '@mui/material/MenuItem'
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment'
 import styles from '../styles/Nav.module.css'
 import Donate from './Donate'
+import { ViewButton } from './styles/ViewButtons.styled'
+import { ViewButtonWrapper } from './styles/ViewButtons.styled'
 
 const pages = [
   'Fires',
   'Volcanos',
-  'Wildfire Relief Fund 2022',
+  // 'Wildfire Relief Fund 2022',
   // 'Red Tide',
   // 'Earthquakes',
   // 'Snow',
@@ -25,7 +27,7 @@ const pages = [
 ]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
-const ResponsiveAppBar = ({ changeEvent }) => {
+const ResponsiveAppBar = ({ changeEvent, changeViewMode }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
 
@@ -42,8 +44,9 @@ const ResponsiveAppBar = ({ changeEvent }) => {
       changeEvent(17)
     } else if (page === 'Drought') {
       changeEvent(6)
-    } else if (page === 'Wildfire Relief Fund 2022') {
-      window.open('https://www.gofundme.com/f/wildfirerelieffund')
+      // } else if (page === 'Wildfire Relief Fund 2022') {
+      //   window.open('https://www.gofundme.com/f/wildfirerelieffund')
+      // }
     }
   }
 
@@ -114,6 +117,7 @@ const ResponsiveAppBar = ({ changeEvent }) => {
               }}>
               Disaster Tracker
             </Typography>
+
             <Box
               sx={{
                 flexGrow: 1,
@@ -149,6 +153,26 @@ const ResponsiveAppBar = ({ changeEvent }) => {
                 sx={{
                   display: { xs: 'block', md: 'none' },
                 }}>
+                <ViewButtonWrapper
+                  style={{
+                    flexDirection: 'column',
+                    paddingLeft: '.75em',
+                  }}>
+                  <ViewButton
+                    style={{ border: 'none' }}
+                    onClick={() => {
+                      changeViewMode('map')
+                    }}>
+                    Map View
+                  </ViewButton>
+                  <ViewButton
+                    style={{ border: 'none' }}
+                    onClick={() => {
+                      changeViewMode('list')
+                    }}>
+                    Card View
+                  </ViewButton>
+                </ViewButtonWrapper>
                 {pages.map((page) => (
                   <MenuItem
                     key={page}
@@ -167,6 +191,20 @@ const ResponsiveAppBar = ({ changeEvent }) => {
                 display: { xs: 'none', md: 'flex' },
                 justifyContent: 'end',
               }}>
+              <ViewButtonWrapper>
+                <ViewButton
+                  onClick={() => {
+                    changeViewMode('map')
+                  }}>
+                  Map View
+                </ViewButton>
+                <ViewButton
+                  onClick={() => {
+                    changeViewMode('list')
+                  }}>
+                  Card View
+                </ViewButton>
+              </ViewButtonWrapper>
               {pages.map((page) => (
                 <Button
                   key={page}

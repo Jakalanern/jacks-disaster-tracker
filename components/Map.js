@@ -5,6 +5,8 @@ import FireInfo from './FireInfo'
 import EventMarker from './EventMarker'
 import Hint from './Hint'
 import Donate from './Donate'
+import { ViewButton } from './styles/ViewButtons.styled'
+import { ViewButtonWrapper } from './styles/ViewButtons.styled'
 const defaultProps = {
   center: {
     lat: 40.28223044977514,
@@ -21,6 +23,7 @@ const Map = ({
   eventIcon,
   handleHint,
   iconClicked,
+  changeViewMode,
 }) => {
   const [locationInfo, setLocationInfo] = useState(null)
   const [showInfo, setShowInfo] = useState(false)
@@ -40,9 +43,18 @@ const Map = ({
     setShowInfo(true)
   }
 
+  const options = {
+    maxZoom: 18,
+  }
+
   if (!isLoaded) return <div>Loading...</div>
   return (
     <GoogleMap
+      options={{
+        minZoom: 3.55,
+        streetViewControl: false,
+        fullscreenControl: false,
+      }}
       zoom={defaultProps.zoom}
       center={defaultProps.center}
       mapContainerClassName={mapStyles.map}>
@@ -69,6 +81,7 @@ const Map = ({
       <Donate
         href={'https://www.gofundme.com/c/act/wildfire-relief/california'}
       />
+
       {showInfo && <FireInfo locationInfo={locationInfo} />}
       {iconClicked === false && <Hint />}
     </GoogleMap>

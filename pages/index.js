@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import Loading from '../components/Loading'
 import styles from '../styles/Layout.module.css'
 import FireInfo from '../components/FireInfo'
+import EventList from '../components/EventList'
 
 export default function Index() {
   const icons = {
@@ -17,7 +18,13 @@ export default function Index() {
   const [eventID, setEventID] = useState(8)
   const [eventIcon, setEventIcon] = useState(icons.fire)
   const [loadingName, setLoadingName] = useState('LOADING WILDFIRES')
+  const [eventName, setEventName] = useState('Wildfires')
   const [iconClicked, setIconClicked] = useState(false)
+  const [viewMode, setViewMode] = useState('map')
+
+  const changeViewMode = (modeName) => {
+    setViewMode(modeName)
+  }
 
   const handleHint = () => {
     setIconClicked(true)
@@ -26,23 +33,18 @@ export default function Index() {
   const changeEvent = (eventID) => {
     if (eventID === 8) {
       setLoadingName('LOADING WILDFIRES')
+      setTimeout(() => {
+        setEventName('Wildfires')
+      })
       setEventIcon(icons.fire)
     }
     if (eventID === 12) {
       setLoadingName('LOADING VOLCANOS')
+      setTimeout(() => {
+        setEventName('Volcanoes')
+      })
       setEventIcon(icons.volcano)
     }
-    // } else if (page === 'Volcanos') {
-    //   changeEvent(12)
-    // } else if (page === 'Red Tide') {
-    //   changeEvent(13)
-    // } else if (page === 'Earthquakes') {
-    //   changeEvent(16)
-    // } else if (page === 'Snow') {
-    //   changeEvent(17)
-    // } else if (page === 'Drought') {
-    //   changeEvent(6)
-    // }
     setEventID(eventID)
   }
 
@@ -60,21 +62,26 @@ export default function Index() {
 
   return (
     <div className={styles.container}>
-      <ResponsiveAppBar changeEvent={changeEvent} />
+      <ResponsiveAppBar
+        changeEvent={changeEvent}
+        changeViewMode={changeViewMode}
+      />
       <main className={styles.main}>
         <Head>
           <title>Disaster Tracker</title>
         </Head>
-        {loading === true ? (
-          <Loading loadingName={loadingName} />
-        ) : (
+        {loading === true && <Loading loadingName={loadingName} />}
+        {!loading && viewMode === 'map' ? (
           <Map
             fires={fires}
             loading={loading}
             eventIcon={eventIcon}
             handleHint={handleHint}
             iconClicked={iconClicked}
+            changeViewMode={changeViewMode}
           />
+        ) : (
+          <EventList events={fires} eventName={eventName} />
         )}
       </main>
     </div>
