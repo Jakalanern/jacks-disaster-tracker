@@ -7,11 +7,13 @@ import Loading from '../components/Loading'
 import styles from '../styles/Layout.module.css'
 import FireInfo from '../components/FireInfo'
 import EventList from '../components/EventList'
+import fireIcon from '../icons/fire-element--xxxs.png'
+import volcanoIcon from '../icons/volcano.png'
 
 export default function Index() {
   const icons = {
-    fire: 'https://gcdnb.pbrd.co/images/nCVYT8cGTbRv.png?o=1',
-    volcano: 'https://gcdnb.pbrd.co/images/cbfTLmxIWDx1.png?o=1',
+    fire: 'https://cdn-icons-png.flaticon.com/512/785/785116.png',
+    volcano: 'https://cdn-icons-png.flaticon.com/512/2206/2206644.png',
   }
   const [fires, setFires] = useState()
   const [loading, setLoading] = useState()
@@ -52,6 +54,7 @@ export default function Index() {
     const fetchFires = async () => {
       setLoading(true)
       const res = await fetch('https://eonet.gsfc.nasa.gov/api/v2.1/events')
+      console.log('FETCH COMPLETE')
       const { events } = await res.json()
       const fires = events.filter((event) => event.categories[0].id === eventID)
       setFires(fires)

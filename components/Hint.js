@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import styles from '../styles/Hint.module.css'
 
 const Hint = () => {

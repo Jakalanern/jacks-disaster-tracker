@@ -1,5 +1,7 @@
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api'
 import { useEffect, useState } from 'react'
+import fireIcon from '../icons/fire.png'
+import volcanoIcon from '../icons/volcano.png'
 
 const EventMarker = ({
   fire,
@@ -12,8 +14,8 @@ const EventMarker = ({
   handleHint,
 }) => {
   const icons = {
-    fire: 'https://i.ibb.co/QP3nD4R/new-new-flame-xxxs.png',
-    volcano: 'https://i.ibb.co/NZRT1GY/output-onlinepngtools-6.png',
+    fire: require('../icons/fire-element--xs.png'),
+    volcano: volcanoIcon,
   }
   return (
     <Marker
@@ -31,7 +33,7 @@ const EventMarker = ({
         lng: fireLang,
       }}
       tracksViewChanges={false}
-      icon={eventIcon}
+      icon={{ url: eventIcon, scaledSize: new google.maps.Size(20, 20) }}
     />
   )
 }
